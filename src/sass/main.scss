@@ -1,9 +1,13 @@
 @import '../../node_modules/reveal.js/css/reveal.css';
-@import '../../node_modules/reveal.js/css/theme/moon.css';
+@import '../../node_modules/reveal.js/css/theme/blood.css';
 @import '../../node_modules/reveal.js/lib/css/monokai.css';
 
 .title {
   color: #fff;
   top: 150px;
   position: relative;
+}
+.frame {
+  width: 100%;
+  height: 100vh;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "presentation-react",
+  "name": "solid-presentation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Presentation about SOLID principles made with reveal.js",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --env.development",
