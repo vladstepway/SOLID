@@ -1,0 +1,100 @@
+section(data-background-color='#141519')
+    pre
+      code(data-line-numbers="5-13,27,30,33,39-41,45-47,51-57,60-97")
+        | class Animal {
+        |   constructor(name){
+        |     this.name = name;
+        |   }
+        |   walk(){
+        |     console.log(`${this.name} can walk`)
+        |   }
+        |   swim(){
+        |     console.log(`${this.name} can swim`)
+        |   }
+        |   fly(){
+        |     console.log(`${this.name} can fly`)
+        |   }
+        | }
+        |
+        |
+        |
+        | class Dog extends Animal {
+        | }
+        | class Eagle extends Animal {
+        | }
+        | class Whale extends Animal {
+        | }
+        | const dog = new Dog("Ralph");
+        | dog.walk(); // Ralph can walk
+        | dog.swim(); // Ralph can swim
+        | dog.fly(); // incorrect Ralph can fly
+        | const eagle = new Eagle("Kenny");
+        | eagle.walk(); // Kenny can walk
+        | eagle.swim(); // incorrect Kenny can swim
+        | eagle.fly(); // Kenny can fly
+        | const whale = new Whale("Jack");
+        | whale.walk(); // incorrect Jack can walk
+        | whale.swim(); // Jack can swim
+        | whale.fly(); // incorrect Jack can fly
+        |
+        |
+        | class Dog extends Animal {
+        |   fly() {
+        |     return null;
+        |   }
+        | }
+        |
+        | class Eagle extends Animal {
+        |   swim() {
+        |     return null;
+        |   }
+        | }
+        | 
+        | class Whale extends Animal {
+        |   fly() {
+        |     return null;
+        |   }
+        | 
+        |   walk() {
+        |     return null;
+        |   }
+        | }
+        |
+        | class Animal {
+        |   constructor(name){
+        |     this.name = name;
+        |   }
+        | }
+        |
+        | const swimmer = {
+        |   swim(){
+        |     console.log(`${this.name} can swim`)
+        |   }
+        | }
+        |
+        | const flier = {
+        |   fly(){
+        |     console.log(`${this.name} can fly`)
+        |   }
+        | }
+        |
+        | const walker = {
+        |   walk(){
+        |     console.log(`${this.name} can walk`)
+        |   }
+        | }
+        |
+        | Object.assign(Dog.prototype,swimmer,walker);
+        | Object.assign(Eagle.prototype,walker,flier);
+        | Object.assign(Whale.prototype,swimmer);
+        |
+        | const dog = new Dog("Ralph");
+        | dog.walk(); // Ralph can walk
+        | dog.swim(); // Ralph can swim
+        |
+        | const eagle = new Eagle("Kenny");
+        | eagle.walk(); // Kenny can walk
+        | eagle.fly(); // Kenny can fly
+        |
+        | const whale = new Whale("Jack");
+        | whale.swim(); // Jack can swim
