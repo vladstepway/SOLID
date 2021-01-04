@@ -1,5 +1,3 @@
-[Presentation video](https://www.youtube.com/)
-
 
 Deployment: [S. O. L. I. D.](https://vladstepway-solid-presentation.netlify.app/)
 
