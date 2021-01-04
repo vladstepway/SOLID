@@ -1,0 +1,95 @@
+section(data-background-color='#141519')
+  section  
+    include sub-slides/slide5/s5-1.pug
+  section
+    include sub-slides/slide5/s5-2.pug
+  section
+    img(data-src='images/dip.png')
+  section
+    pre
+      code(data-line-numbers="2-4,7-18,24-26,29-41,51-53,61-63,67-71,73-77")
+        | class Fetch{
+        |   request(url){
+        |     return fetch(url).then(res=>res.json());
+        |   }
+        | }
+        | 
+        | class Database {
+        |   constructor(){
+        |     this.fetch = new Fetch();
+        |   }
+        |
+        |   getData(){
+        |     return this.fetch.request("example.com");
+        |   }
+        | }
+        |
+        | const db = new Database();
+        | db.getData(); // data from database
+        |
+        |
+        |
+        | 
+        | class LocalStorage{
+        |   get(key){
+        |     return "data from local storage";
+        |   }
+        | }
+        | 
+        | class Database {
+        |   constructor(){
+        |     //this.fetch = new Fetch();
+        |     this.localStorage = new LocalStorage();
+        |   }
+        |
+        |   getData(){
+        |     //return this.fetch.request("example.com");
+        |     return this.localStorage.get("key");
+        |   }
+        | }
+        | const db = new Database();
+        | db.getData(); // data from local storage
+        | 
+        |
+        |
+        |
+        | class FetchData {
+        |   constructor(){
+        |     this.fetch = new Fetch();
+        |   }
+        |
+        |   getClientData(key){
+        |     return   this.fetch.request(key)
+        |   }
+        | }
+        | 
+        | class LocalStorageData {
+        |   constructor(){
+        |     this.localstorage = new LocalStorage();
+        |   }
+        |
+        |   getClientData(key){
+        |     return   this.localstorage.get(key)
+        |   }
+        | }
+        | 
+        | class Database {
+        |   constructor(data){
+        |     //this.fetch = new Fetch();
+        |     //this.localStorage = new LocalStorage();
+        |     this.data = data;
+        |   }
+        |
+        |   getData(key){
+        |     //return this.fetch.request("example.com");
+        |     //return this.localStorage.get("key");
+        |     return this.data.getClientData(key);
+        |   }
+        | }
+        |
+        | const db = new Database(new FetchData());
+        | db.getData(); // data from database
+        | const db1 = new Database(new LocalStorageData());
+        | db1.getData(); // data from localstorage
+  section
+    h2 Thanks for attention!
